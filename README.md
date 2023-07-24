@@ -1,6 +1,6 @@
 # Shopping-app-frontend
 
-- **Review project at : **
+- **Review project at : https://saket-shopping-app.vercel.app/**
 
 ### The app supports the following functionalities.
 
@@ -14,13 +14,10 @@
 
 - User can remove the added products from the cart
 
-
-
-
 ## 🛠 Tech Used
+
 - **Libraries and Packages:** ReactJS (react-router, react-icons, react-hot-toast), context-api, react-redux toolkit
 
 - **Frameworks:** Tailwind-CSS
 
 - **Deployment:** Vercel
-
