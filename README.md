@@ -1,4 +1,4 @@
-# Shopping-app-frontend
+# Shopping-app(frontend)
 
 - **Review project at : https://saket-shopping-app.vercel.app/**
 
