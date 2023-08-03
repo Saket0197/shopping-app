@@ -3,10 +3,13 @@ import Header from '../components/Header';
 import { useSelector } from 'react-redux';
 import CartProduct from '../components/CartProduct';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { emptyCart } from '../redux/slices/CartSlice';
 
 export default function CartPage() {
 
   const cartProducts = useSelector(({Cart})=>Cart.cartValue);
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -34,7 +37,7 @@ export default function CartPage() {
               </div>
 
               <NavLink to='/cart/checkout'>
-                  <button className='w-full p-2 rounded-md border border-slate-500 capitalize bg-[#299158] hover:bg-[#299158b7] transition duration-200 text-[#f3f382] font-semibold'>Checkout</button>
+                  <button className='w-full p-2 rounded-md border border-slate-500 capitalize bg-[#299158] hover:bg-[#299158b7] transition duration-200 text-[#f3f382] font-semibold' onClick={() => dispatch(emptyCart())}>Checkout</button>
               </NavLink>
           </div>
         </div> : 
