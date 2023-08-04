@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
-import ReRoute from './components/ReRoute';
 import ProductsPage from "./pages/ProductsPage";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
       <div className="w-full">
         <Routes>
            <Route path="/" element={<Layout/>}>
-              <Route index element = {<ReRoute><ProductsPage type={'All'}/></ReRoute>} />
+              <Route index element = {<ProductsPage type={'All'}/>} />
               <Route path="products/:category" element={<ProductsPage type={'Category'} />}/>
            </Route>
 

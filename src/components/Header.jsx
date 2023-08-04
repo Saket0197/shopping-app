@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../Assets/AppLogo.jpg';
 import {FaShoppingCart} from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { ProductContext } from '../context/ProductContext';
 
 export default function Header() {
+  const {setSelectedCategory} = useContext(ProductContext);
   const cartProducts = useSelector(({Cart}) => Cart.cartValue);
   return (
     <div className='w-full pr-4 flex justify-between items-center bg-[#0c0c31]'>
         <NavLink to='/'>
-          <img src={logo} alt='app logo' className='h-[14vh] rounded-sm' />
+          <img src={logo} alt='app logo' className='h-[14vh] rounded-sm' onClick={() => setSelectedCategory('All')}/>
         </NavLink>
             
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import { useSelector } from 'react-redux';
 import CartProduct from '../components/CartProduct';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { emptyCart } from '../redux/slices/CartSlice';
 
@@ -10,6 +10,7 @@ export default function CartPage() {
 
   const cartProducts = useSelector(({Cart})=>Cart.cartValue);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -43,9 +44,7 @@ export default function CartPage() {
         </div> : 
         <div className='flex flex-col gap-4 justify-center items-center w-full h-[100vh]'>
           <p className='sm:text-3xl text-4xl text-[#299158] text-center'>Your Cart is Empty</p>
-          <NavLink to='/'>
-            <button className='sm:text-xl w-[70vw] text-2xl font-semibold p-2 rounded-lg border border-slate-500 capitalize bg-[#299158] hover:bg-[#299158b7] transition duration-200 text-[#f3f382]'>Shop Now!</button>
-          </NavLink>
+          <button className='sm:text-xl w-[70vw] text-2xl font-semibold p-2 rounded-lg border border-slate-500 capitalize bg-[#299158] hover:bg-[#299158b7] transition duration-200 text-[#f3f382]' onClick={() => navigate(-1)}>Shop Now!</button>
         </div>
       }
     </div>

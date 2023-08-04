@@ -29,8 +29,7 @@ export default function Product({id,title,description,thumbnail,price,rating}) {
         {
           (cartProducts.length && cartProducts.map((eachProduct) => eachProduct.id).includes(id)) ? 
           <div className='border border-slate-500 p-2 rounded-lg cursor-pointer text-center bg-[#f5581ac9] hover:bg-[#f5581aaf] transition duration-200 font-semibold text-[#000] capitalize' onClick={() => dispatch(removeFromCart(id))}>Remove From Cart</div> : 
-          <div className='border border-slate-500 p-2 rounded-lg cursor-pointer text-center bg-[#f5e61a8c] hover:bg-[#f5e61a5e] transition duration-200 font-semibold text-[#000] capitalize' onClick={() => dispatch(addToCart({id,title,description,thumbnail,price}))}>Add to Cart</div>
-          
+          <div className='border border-slate-500 p-2 rounded-lg cursor-pointer text-center bg-[#f5e61a8c] hover:bg-[#f5e61a5e] transition duration-200 font-semibold text-[#000] capitalize' onClick={() => dispatch(addToCart({id,title,description,thumbnail,price}))}>Add to Cart</div> 
         }
     </div>
   )

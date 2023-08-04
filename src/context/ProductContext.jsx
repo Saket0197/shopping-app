@@ -4,13 +4,12 @@ export const ProductContext = createContext();
 
 export default function ProductContextProvider({children}) {
 
-    const [rating, setRating] = useState('None');
-    const [priceRange,setRange] = useState('None');
     const [categories,setCategories] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [selectedCategory,setSelectedCategory] = useState('All');
+    const [selectedFilters,setSelectedFilters] = useState({rating:'None',range:'None'});
 
     const value = {
-        rating,setRating,priceRange,setRange,categories,setCategories,selectedCategory, setSelectedCategory
+        categories,setCategories,selectedCategory,setSelectedCategory,selectedFilters,setSelectedFilters
     }
 
 return <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
